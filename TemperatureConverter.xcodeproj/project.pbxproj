@@ -16,8 +16,8 @@
 		FF74E65D17AD4709001B650E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = FF74E65C17AD4709001B650E /* Default.png */; };
 		FF74E65F17AD4709001B650E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF74E65E17AD4709001B650E /* Default@2x.png */; };
 		FF74E66117AD4709001B650E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FF74E66017AD4709001B650E /* Default-568h@2x.png */; };
-		FF74E66A17AD4894001B650E /* TemperatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF74E66817AD4894001B650E /* TemperatureViewController.m */; };
-		FF74E66B17AD4894001B650E /* TemperatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF74E66917AD4894001B650E /* TemperatureViewController.xib */; };
+		FF74E67017AD581E001B650E /* TemperatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF74E66E17AD581E001B650E /* TemperatureViewController.m */; };
+		FF74E67117AD581E001B650E /* TemperatureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF74E66F17AD581E001B650E /* TemperatureViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,9 +34,9 @@
 		FF74E65C17AD4709001B650E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		FF74E65E17AD4709001B650E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		FF74E66017AD4709001B650E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FF74E66717AD4894001B650E /* TemperatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TemperatureViewController.h; path = ../TemperatureViewController.h; sourceTree = "<group>"; };
-		FF74E66817AD4894001B650E /* TemperatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TemperatureViewController.m; path = ../TemperatureViewController.m; sourceTree = "<group>"; };
-		FF74E66917AD4894001B650E /* TemperatureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TemperatureViewController.xib; path = ../TemperatureViewController.xib; sourceTree = "<group>"; };
+		FF74E66D17AD581E001B650E /* TemperatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemperatureViewController.h; sourceTree = "<group>"; };
+		FF74E66E17AD581E001B650E /* TemperatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemperatureViewController.m; sourceTree = "<group>"; };
+		FF74E66F17AD581E001B650E /* TemperatureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TemperatureViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +83,9 @@
 		FF74E65017AD4709001B650E /* TemperatureConverter */ = {
 			isa = PBXGroup;
 			children = (
-				FF74E66717AD4894001B650E /* TemperatureViewController.h */,
-				FF74E66817AD4894001B650E /* TemperatureViewController.m */,
-				FF74E66917AD4894001B650E /* TemperatureViewController.xib */,
+				FF74E66D17AD581E001B650E /* TemperatureViewController.h */,
+				FF74E66E17AD581E001B650E /* TemperatureViewController.m */,
+				FF74E66F17AD581E001B650E /* TemperatureViewController.xib */,
 				FF74E65917AD4709001B650E /* AppDelegate.h */,
 				FF74E65A17AD4709001B650E /* AppDelegate.m */,
 				FF74E65117AD4709001B650E /* Supporting Files */,
@@ -162,7 +162,7 @@
 				FF74E65D17AD4709001B650E /* Default.png in Resources */,
 				FF74E65F17AD4709001B650E /* Default@2x.png in Resources */,
 				FF74E66117AD4709001B650E /* Default-568h@2x.png in Resources */,
-				FF74E66B17AD4894001B650E /* TemperatureViewController.xib in Resources */,
+				FF74E67117AD581E001B650E /* TemperatureViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +175,7 @@
 			files = (
 				FF74E65717AD4709001B650E /* main.m in Sources */,
 				FF74E65B17AD4709001B650E /* AppDelegate.m in Sources */,
-				FF74E66A17AD4894001B650E /* TemperatureViewController.m in Sources */,
+				FF74E67017AD581E001B650E /* TemperatureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
