@@ -7,12 +7,18 @@
 //
 
 #import "AppDelegate.h"
+#import "TemperatureViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    TemperatureViewController  *temperatureViewController = [[TemperatureViewController alloc] init];
+    UINavigationController *navigationViewcontroller = [[UINavigationController alloc] initWithRootViewController:temperatureViewController ];
+    self.window.rootViewController = navigationViewcontroller;
+    
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
