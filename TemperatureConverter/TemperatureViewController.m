@@ -54,10 +54,16 @@
         float tempF = [self.tempFahrenheit.text floatValue];
         float tempC = (tempF - 32.0) * (5.0/9.0);
         self.tempCelsius.text = [NSString stringWithFormat:@"%0.2f", tempC];
+        if (tempF == 0.0) {
+            self.tempFahrenheit.text = [NSString stringWithFormat:@"%0.0f", tempF];
+        }
     } else {
         float tempC = [self.tempCelsius.text floatValue];
         float tempF = tempC * (5.0/9.0) + 32;
         self.tempFahrenheit.text = [NSString stringWithFormat:@"%.2f", tempF];
+        if (tempC == 0.0) {
+            self.tempCelsius.text = [NSString stringWithFormat:@"%0.0f", tempC];
+        }
     }
 }
 
@@ -67,13 +73,28 @@
 }
 
 #pragma mark - UITextFieldDelegate implementation
+
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
+    // Noting where where user left the editing
     if (textField == self.tempFahrenheit) {
         lastEditOnFahrenheit = YES;
     } else if (textField == self.tempCelsius) {
         lastEditOnFahrenheit = NO;
     }
+}
+
+- (BOOL) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    NSString *newTemperatureString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    
+    // String checking to handle non numberic input
+    NSNumberFormatter *numFomatter = [[NSNumberFormatter alloc] init];
+    NSNumber *number = [numFomatter numberFromString:newTemperatureString];
+    if (number == nil)
+        return NO;
+    
+    return YES;
 }
 
 @end
