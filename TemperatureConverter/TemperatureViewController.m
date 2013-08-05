@@ -9,9 +9,9 @@
 #import "TemperatureViewController.h"
 
 @interface TemperatureViewController ()
-{
-    BOOL lastEditOnFahrenheit;
-}
+
+@property (nonatomic, assign) BOOL lastEditOnFahrenheit;
+
 @end
 
 @implementation TemperatureViewController
@@ -21,7 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Temperature";
-        lastEditOnFahrenheit = YES;
+        self.lastEditOnFahrenheit = YES;
     }
     return self;
 }
@@ -50,7 +50,7 @@
 {
     [self escapeIfEditing];
 
-    if (lastEditOnFahrenheit) {
+    if (self.lastEditOnFahrenheit) {
         float tempF = [self.tempFahrenheit.text floatValue];
         float tempC = (tempF - 32.0) * (5.0/9.0);
         self.tempCelsius.text = [NSString stringWithFormat:@"%0.2f", tempC];
@@ -59,7 +59,7 @@
         }
     } else {
         float tempC = [self.tempCelsius.text floatValue];
-        float tempF = tempC * (5.0/9.0) + 32;
+        float tempF = tempC * (9.0/5.0) + 32;
         self.tempFahrenheit.text = [NSString stringWithFormat:@"%.2f", tempF];
         if (tempC == 0.0) {
             self.tempCelsius.text = [NSString stringWithFormat:@"%0.0f", tempC];
@@ -78,9 +78,9 @@
 {
     // Noting where where user left the editing
     if (textField == self.tempFahrenheit) {
-        lastEditOnFahrenheit = YES;
+        self.lastEditOnFahrenheit = YES;
     } else if (textField == self.tempCelsius) {
-        lastEditOnFahrenheit = NO;
+        self.lastEditOnFahrenheit = NO;
     }
 }
 
@@ -88,7 +88,10 @@
     
     NSString *newTemperatureString = [textField.text stringByReplacingCharactersInRange:range withString:string];
     
-    // String checking to handle non numberic input
+    if (newTemperatureString.length == 0)
+        return YES;
+    
+    // String checking to handle non numeric input
     NSNumberFormatter *numFomatter = [[NSNumberFormatter alloc] init];
     NSNumber *number = [numFomatter numberFromString:newTemperatureString];
     if (number == nil)
